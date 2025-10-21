@@ -1,37 +1,54 @@
-// Obtener el elemento de la pantalla
-const display = document.getElementById('display');
+// Simulación del DOM para el entorno de prueba
+const display = {
+    value: ''
+};
 
-// Función para agregar un valor (número u operador) a la pantalla
+// **IMPORTANTE:** Estas son las funciones de tu código
 function appendToDisplay(value) {
     display.value += value;
 }
 
-// Función para limpiar la pantalla (Botón AC)
 function clearDisplay() {
     display.value = '';
 }
 
-// Función para borrar el último caracter (Botón DEL)
-function deleteLast() {
-    // slice(0, -1) corta el último caracter del string
-    display.value = display.value.slice(0, -1);
-}
-
-// Función para calcular el resultado (Botón =)
 function calculateResult() {
     try {
-        // eval() toma el string (ej. "5+3") y lo ejecuta como código JS.
-        // ¡Es muy poderoso pero puede ser inseguro en proyectos grandes!
         const result = eval(display.value);
-        
-        // Manejar división por cero (que da 'Infinity')
+
         if (result === Infinity || result === -Infinity) {
             display.value = 'Error';
         } else {
             display.value = result;
         }
     } catch (error) {
-        // Si la expresión es inválida (ej. "5++3"), muestra Error
         display.value = 'Error';
     }
 }
+
+// **Prueba Unitaria: Suma Correcta (3 + 5)**
+function testSumaCorrecta() {
+    // 1. Limpiar el estado inicial
+    clearDisplay();
+
+    // 2. Realizar la operación (3 + 5)
+    appendToDisplay('3');
+    appendToDisplay('+');
+    appendToDisplay('5');
+
+    // 3. Calcular el resultado
+    calculateResult();
+
+    // 4. Verificar el resultado
+    const esperado = 8;
+    const obtenido = display.value;
+
+    if (obtenido == esperado) {
+        console.log(`✅ Prueba Unitaria (Suma): ¡Éxito! 3 + 5 = ${obtenido}`);
+    } else {
+        console.error(`❌ Prueba Unitaria (Suma): Falló. Esperado: ${esperado}, Obtenido: ${obtenido}`);
+    }
+}
+
+// Ejecutar la prueba
+// testSumaCorrecta();
