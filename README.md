@@ -83,3 +83,49 @@ function testOperacionesEncadenadas() {
 
 // Ejecutar la prueba
 testOperacionesEncadenadas();
+```
+## Prueba de Rendimiento - 100,000 Cálculos
+
+Esta prueba mide el tiempo que tarda el motor de JavaScript en procesar la misma operación compleja 100,000 veces, evaluando el rendimiento de la calculadora.
+
+### Código de la Prueba
+
+```javascript
+/**
+ * **Prueba de Rendimiento: 100,000 Cálculos**
+ * Mide el tiempo que tarda el motor de JS en procesar
+ * la misma operación compleja miles de veces.
+ */
+function testRendimiento() {
+    console.log("⏱️ Iniciando Prueba de Rendimiento...");
+    
+    // 1. Configuración
+    const REPETICIONES = 100000; // Cien mil veces
+    const EXPRESION_COMPLEJA = '(150.5 * 3.14) / 2 + (45 - 15.3)';
+    
+    // 2. Iniciar el cronómetro
+    // Le damos un nombre único: 'calculo_100k'
+    console.time('calculo_100k');
+
+    // 3. Ejecutar el bucle
+    for (let i = 0; i < REPETICIONES; i++) {
+        // IMPORTANTE: Debemos reasignar la expresión en cada ciclo,
+        // porque calculateResult() sobrescribe display.value con el resultado.
+        display.value = EXPRESION_COMPLEJA;
+        
+        // Ejecutamos la función que queremos probar
+        calculateResult();
+    }
+
+    // 4. Detener el cronómetro y mostrar el resultado
+    // Usamos el mismo nombre: 'calculo_100k'
+    console.timeEnd('calculo_100k');
+    
+    console.log(`Prueba de Rendimiento Finalizada. ${REPETICIONES} cálculos completados.`);
+    console.log(`El resultado final en el display es: ${display.value}`); // Debería ser 251.62
+}
+
+// --- Ejecutar las pruebas ---
+// testSumaCorrecta();
+// testOperacionesEncadenadas();
+testRendimiento();
