@@ -46,6 +46,9 @@ function testSumaCorrecta() {
 
 Esta prueba verifica cómo interactúan múltiples operaciones matemáticas en la calculadora, encadenando resultados intermedios.
 
+**Descripcion**: En esta prueba se agrega el siguiente operador en este caso **la resta**, si esta prueba hace bien la operacion matematica de 3 operadores
+este dara una aprovacion satisfactoria, de igual manera este logro pasar dichos requerimientos de forma satisfactoria
+
 ### Caso de Prueba: `5 * 2 - 4`
 
 
