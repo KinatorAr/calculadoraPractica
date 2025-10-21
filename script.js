@@ -51,4 +51,4 @@ function testSumaCorrecta() {
 }
 
 // Ejecutar la prueba
-// testSumaCorrecta();
+testSumaCorrecta();
