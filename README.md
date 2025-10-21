@@ -37,12 +37,15 @@ function testSumaCorrecta() {
 
 // Ejecutar la prueba
 // testSumaCorrecta();
+```
 
 ## Prueba de Integración - Operaciones Encadenadas
 
 Esta prueba verifica cómo interactúan múltiples operaciones matemáticas en la calculadora, encadenando resultados intermedios.
 
 ### Caso de Prueba: `5 * 2 - 4`
+
+
 
 ```javascript
 // **Prueba de Integración: Operaciones Encadenadas (5 * 2 - 4)**
