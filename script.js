@@ -51,4 +51,34 @@ function testSumaCorrecta() {
 }
 
 // Ejecutar la prueba
-testSumaCorrecta();
+//testSumaCorrecta();
+
+// **Prueba de Integración: Operaciones Encadenadas (5 * 2 - 4)**
+function testOperacionesEncadenadas() {
+    // 1. Limpiar el estado inicial
+    clearDisplay();
+
+    // 2. Primera operación: Multiplicación (5 * 2)
+    appendToDisplay('5');
+    appendToDisplay('*');
+    appendToDisplay('2');
+    calculateResult(); // Resultado intermedio: 10
+
+    // 3. Segunda operación: Resta (- 4)
+    appendToDisplay('-'); // Se concatena al resultado (10 - ...)
+    appendToDisplay('4');
+    calculateResult(); // Resultado final: 6
+
+    // 4. Verificar el resultado
+    const esperado = 6;
+    const obtenido = display.value;
+
+    if (obtenido == esperado) {
+        console.log(`✅ Prueba de Integración (Encadenadas): ¡Éxito! 5 * 2 - 4 = ${obtenido}`);
+    } else {
+        console.error(`❌ Prueba de Integración (Encadenadas): Falló. Esperado: ${esperado}, Obtenido: ${obtenido}`);
+    }
+}
+
+// Ejecutar la prueba
+testOperacionesEncadenadas();
