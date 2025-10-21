@@ -8,6 +8,9 @@ Esta actividad contiene pruebas para validar el funcionamiento de una calculador
 
 Una **prueba unitaria** verifica que una función individual funcione correctamente de manera aislada.
 
+**Descripcion**: Este codigo hace una verificacion en donde limpia todo el display y hace la suma de forma automatica
+si la realiza este pasara la prueba de forma satisfactoria en este caso si cumplio con dicho requisito
+
 ### Caso: `3 + 5`
 
 ```javascript
